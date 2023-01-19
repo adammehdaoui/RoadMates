@@ -1,0 +1,24 @@
+CREATE TABLE Utilisateur
+
+CREATE TABLE Parraine
+
+CREATE TABLE Voiture
+
+CREATE TABLE Modele
+
+CREATE TABLE Sponsor
+
+CREATE TABLE Sponsorise
+
+CREATE TABLE Propose
+
+CREATE TABLE Trajet
+
+CREATE TABLE Etape
+
+CREATE TABLE Adresse
+
+CREATE TABLE Ville
+
+CREATE TABLE Commente
+

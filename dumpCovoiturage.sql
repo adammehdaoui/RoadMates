@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS ville CASCADE;
 DROP TABLE IF EXISTS commente CASCADE;
 
 CREATE TABLE utilisateur(
-    idUtil SERIAL PRIMARY KEY;
+    idUtil SERIAL PRIMARY KEY,
     nom VARCHAR(255),
     adresse VARCHAR(255),
     email CHAR(50),
@@ -25,7 +25,7 @@ CREATE TABLE parraine(
     idParrainant INT REFERENCES utilisateur(idUtil),
     idParraine INT REFERENCES utilisateur(idUtil),
     PRIMARY KEY (idParrainant, idParraine)
-)
+);
 
 CREATE TABLE modele(
     idModele INT PRIMARY KEY,
@@ -33,44 +33,44 @@ CREATE TABLE modele(
     couleur VARCHAR(25),
     carburant CHAR(10),
     classeCritair CHAR(1)
-)
+);
 
 CREATE TABLE voiture(
     numImmatriculation CHAR(10) PRIMARY KEY,
     idUtil INT REFERENCES utilisateur(idUtil),
     idModele INT REFERENCES modele(idModele),
-)
+);
 
 CREATE TABLE sponsor(
     idSponsor SERIAL PRIMARY KEY,
     raisonSociale VARCHAR(50),
     dureeTrajet INT,
     remuneration DECIMAL(8,2)
-)
+);
 
 CREATE TABLE sponsorise(
     idSponsor INT REFERENCES sponsor(idSponsor),
     numImmatriculation CHAR(10) REFERENCES voiture(numImmatriculation),
     PRIMARY KEY(idSponsor, numImmatriculation)
-)
+);
 
 CREATE TABLE trajet(
     idTrajet SERIAL PRIMARY KEY,
     coutTrajet DECIMAL(8,2),
     finalise BOOLEAN
-)
+);
 
 CREATE TABLE propose(
     idUtil INT REFERENCES utilisateur(idUtil),
     idTrajet INT REFERENCES trajet(idTrajet),
     numImmatriculation CHAR(10) REFERENCES voiture(numImmatriculation),
     PRIMARY KEY(idUtil, idTrajet, numImmatriculation)
-)
+);
 
 CREATE TABLE ville(
     codePostal CHAR(10),
     nomVille VARCHAR(255)
-)
+);
 
 
 CREATE TABLE adresse(
@@ -78,7 +78,7 @@ CREATE TABLE adresse(
     numVoie INT,
     nomVoie VARCHAR(255),
     codePostal REFERENCES ville(codePostal)
-)
+);
 
 CREATE TABLE etape(
     idEtape SERIAL PRIMARY KEY,
@@ -90,12 +90,12 @@ CREATE TABLE etape(
     idUtil INT REFERENCES utilisateur(idUtil),
     idTrajet INT REFERENCES trajet(idTrajet),
     idAdresse INT REFERENCES adresse(idAdresse)
-)
-    
+);
+
 CREATE TABLE commente(
     idUtil REFERENCES utilisateur(idUtil),
     idAdresse REFERENCES adresse(idAdresse),
     contenuCommentaire VARCHAR(255),
     PRIMARY KEY (idUtil, idAdresse)
-)
+);
 

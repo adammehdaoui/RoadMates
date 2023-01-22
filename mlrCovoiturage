@@ -1,0 +1,38 @@
+Utilisateur(idUtil, nom, adresse, email, dateNaissance, mdp, numPermis)
+
+Parraine(idParrainant#, idParraine#)
+idParrainant en référence à Utilisateur(id)
+idParraine en référence à Utilisateur(id)
+
+Voiture(numImmatriculation, idUtil#, idModele#)
+idUtil en référence à Utilisateur(idUtil)
+idModele en référence à Modele(idModele)
+
+Modèle(idModele, nbPlaces, couleur, carburant, classeCritair)
+
+Sponsor(idSponsor, raisonSociale, dureeTrajet, remuneration)
+
+Sponsorise(idSponsor#, numImmatriculation#)
+idSponsor en référence à Sponsor(idSponsor)
+numImmatriculation en référence à Voiture(numImmatriculation)
+
+Propose(idUtil#, idTrajet#, numImmatriculation#)
+idUtil en référence à Utilisateur(idUtil)
+idTrajet en référence à Trajet(idTrajet)
+numImmtriculation en référence à Voiture(numImmatriculation)
+
+Trajet(idTrajet, coutTrajet, finalise)
+
+Etape(idEtape, departOuArrivee, heureSouhaitee, dateSouhaitee, heureReelle, dateReelle, idUtil#, idTrajet#, idAdresse#)
+idUtil en référence à Utilisateur(idUtil)
+idTrajet en référence à Trajet(idTrajet)
+idAdresse en référence à Adresse(idAdresse)
+
+Adresse(idAdresse, numVoie, nomVoie, codePostal#)
+codePostal en référence à Ville(codePosta)
+
+Ville(codePostal, nomVille)
+
+Commente(idUtil#, idAdresse#, contenuCommentaire)
+idUtil en référence à Utilisateur(idUtil)
+idAdresse en référence à Adresse(idAdresse)

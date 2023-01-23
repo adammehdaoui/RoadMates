@@ -22,9 +22,11 @@ CREATE TABLE utilisateur(
 );
 
 CREATE TABLE parraine(
-    idParrainant REFERENCES utilisateur(idUtil),
-    idParraine REFERENCES utilisateur(idUtil),
-    PRIMARY KEY (idParrainant, idParraine)
+    idParrainant INT,
+    idParraine INT,
+    PRIMARY KEY (idParrainant, idParraine),
+    FOREIGN KEY (idParrainant) REFERENCES utilisateur(idUtil),
+    FOREIGN KEY (idParraine) REFERENCES utilisateur(idUtil)
 );
 
 CREATE TABLE modele(
@@ -37,8 +39,10 @@ CREATE TABLE modele(
 
 CREATE TABLE voiture(
     numImmatriculation CHAR(10) PRIMARY KEY,
-    idUtil REFERENCES utilisateur(idUtil),
-    idModele REFERENCES modele(idModele),
+    idUtil INT,
+    idModele INT,
+    FOREIGN KEY (idUtil) REFERENCES utilisateur(idUtil),
+    FOREIGN KEY (idModele) REFERENCES modele(idModele)
 );
 
 CREATE TABLE sponsor(
@@ -49,9 +53,11 @@ CREATE TABLE sponsor(
 );
 
 CREATE TABLE sponsorise(
-    idSponsor REFERENCES sponsor(idSponsor),
-    numImmatriculation REFERENCES voiture(numImmatriculation),
-    PRIMARY KEY(idSponsor, numImmatriculation)
+    idSponsor INT,
+    numImmatriculation CHAR(10),
+    PRIMARY KEY(idSponsor, numImmatriculation),
+    FOREIGN KEY (idSponsor) REFERENCES sponsor(idSponsor),
+    FOREIGN KEY (numImmatriculation) REFERENCES voiture(numImmatriculation)
 );
 
 CREATE TABLE trajet(
@@ -61,23 +67,25 @@ CREATE TABLE trajet(
 );
 
 CREATE TABLE propose(
-    idUtil REFERENCES utilisateur(idUtil),
-    idTrajet REFERENCES trajet(idTrajet),
-    numImmatriculation REFERENCES voiture(numImmatriculation),
-    PRIMARY KEY(idUtil, idTrajet, numImmatriculation)
+    idUtil INT,
+    idTrajet INT,
+    numImmatriculation CHAR(10),
+    PRIMARY KEY(idUtil, idTrajet, numImmatriculation),
+    FOREIGN KEY (idUtil) REFERENCES utilisateur(idUtil),
+    FOREIGN KEY (idTrajet) REFERENCES trajet(idTrajet)
 );
 
 CREATE TABLE ville(
-    codePostal CHAR(10),
+    codePostal CHAR(10) PRIMARY KEY,
     nomVille VARCHAR(255)
 );
-
 
 CREATE TABLE adresse(
     idAdresse SERIAL PRIMARY KEY,
     numVoie INT,
     nomVoie VARCHAR(255),
-    codePostal REFERENCES ville(codePostal)
+    codePostal CHAR(10),
+    FOREIGN KEY (codePostal) REFERENCES ville(codePostal)
 );
 
 CREATE TABLE etape(
@@ -87,15 +95,19 @@ CREATE TABLE etape(
     dateSouhaitee DATE,
     heureReelle TIME,
     dateReelle DATE,
-    idUtil REFERENCES utilisateur(idUtil),
-    idTrajet REFERENCES trajet(idTrajet),
-    idAdresse REFERENCES adresse(idAdresse)
+    idUtil INT,
+    idTrajet INT,
+    idAdresse INT,
+    FOREIGN KEY (idUtil) REFERENCES utilisateur(idUtil),
+    FOREIGN KEY (idTrajet) REFERENCES trajet(idTrajet),
+    FOREIGN KEY (idAdresse) REFERENCES adresse(idAdresse)
 );
 
 CREATE TABLE commente(
-    idUtil REFERENCES utilisateur(idUtil),
-    idAdresse REFERENCES adresse(idAdresse),
+    idUtil INT,
+    idAdresse INT,
     contenuCommentaire VARCHAR(255),
-    PRIMARY KEY (idUtil, idAdresse)
+    PRIMARY KEY (idUtil, idAdresse),
+    FOREIGN KEY (idUtil) REFERENCES utilisateur(idUtil),
+    FOREIGN KEY (idAdresse) REFERENCES adresse(idAdresse)
 );
-

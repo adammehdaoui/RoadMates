@@ -1,38 +1,50 @@
 Utilisateur(idUtil, nom, adresse, email, dateNaissance, mdp, numPermis)
+Clef primaire : idUtil
 
 Parraine(idParrainant#, idParraine#)
+Clef primaire : idParrainant, idParraine
 idParrainant en référence à Utilisateur(id)
 idParraine en référence à Utilisateur(id)
 
 Voiture(numImmatriculation, idUtil#, idModele#)
+Clef primaire : numImmatriculation
 idUtil en référence à Utilisateur(idUtil)
 idModele en référence à Modele(idModele)
 
 Modèle(idModele, nbPlaces, couleur, carburant, classeCritair)
+Clef primaire : idModele
 
 Sponsor(idSponsor, raisonSociale, dureeTrajet, remuneration)
+Clef primaire : idSponsor
 
 Sponsorise(idSponsor#, numImmatriculation#)
+Clef primaire : idSponsor, numImmatriculation
 idSponsor en référence à Sponsor(idSponsor)
 numImmatriculation en référence à Voiture(numImmatriculation)
 
 Propose(idUtil#, idTrajet#, numImmatriculation#)
+Clef primaire : idUtil, idTrajet, numImmatriculation
 idUtil en référence à Utilisateur(idUtil)
 idTrajet en référence à Trajet(idTrajet)
 numImmtriculation en référence à Voiture(numImmatriculation)
 
 Trajet(idTrajet, coutTrajet, finalise)
+Clef primaire : idTrajet
 
 Etape(idEtape, departOuArrivee, heureSouhaitee, dateSouhaitee, heureReelle, dateReelle, idUtil#, idTrajet#, idAdresse#)
+Clef primaire : idEtape
 idUtil en référence à Utilisateur(idUtil)
 idTrajet en référence à Trajet(idTrajet)
 idAdresse en référence à Adresse(idAdresse)
 
 Adresse(idAdresse, numVoie, nomVoie, codePostal#)
-codePostal en référence à Ville(codePosta)
+Clef primaire : idAdresse
+codePostal en référence à Ville(codePostal)
 
 Ville(codePostal, nomVille)
+Clef primaire : codePostal
 
 Commente(idUtil#, idAdresse#, contenuCommentaire)
+Clef primaire : idUtil, idAdresse
 idUtil en référence à Utilisateur(idUtil)
 idAdresse en référence à Adresse(idAdresse)

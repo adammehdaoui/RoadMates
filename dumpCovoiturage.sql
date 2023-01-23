@@ -22,8 +22,8 @@ CREATE TABLE utilisateur(
 );
 
 CREATE TABLE parraine(
-    idParrainant INT REFERENCES utilisateur(idUtil),
-    idParraine INT REFERENCES utilisateur(idUtil),
+    idParrainant REFERENCES utilisateur(idUtil),
+    idParraine REFERENCES utilisateur(idUtil),
     PRIMARY KEY (idParrainant, idParraine)
 );
 
@@ -37,8 +37,8 @@ CREATE TABLE modele(
 
 CREATE TABLE voiture(
     numImmatriculation CHAR(10) PRIMARY KEY,
-    idUtil INT REFERENCES utilisateur(idUtil),
-    idModele INT REFERENCES modele(idModele),
+    idUtil REFERENCES utilisateur(idUtil),
+    idModele REFERENCES modele(idModele),
 );
 
 CREATE TABLE sponsor(
@@ -49,8 +49,8 @@ CREATE TABLE sponsor(
 );
 
 CREATE TABLE sponsorise(
-    idSponsor INT REFERENCES sponsor(idSponsor),
-    numImmatriculation CHAR(10) REFERENCES voiture(numImmatriculation),
+    idSponsor REFERENCES sponsor(idSponsor),
+    numImmatriculation REFERENCES voiture(numImmatriculation),
     PRIMARY KEY(idSponsor, numImmatriculation)
 );
 
@@ -61,9 +61,9 @@ CREATE TABLE trajet(
 );
 
 CREATE TABLE propose(
-    idUtil INT REFERENCES utilisateur(idUtil),
-    idTrajet INT REFERENCES trajet(idTrajet),
-    numImmatriculation CHAR(10) REFERENCES voiture(numImmatriculation),
+    idUtil REFERENCES utilisateur(idUtil),
+    idTrajet REFERENCES trajet(idTrajet),
+    numImmatriculation REFERENCES voiture(numImmatriculation),
     PRIMARY KEY(idUtil, idTrajet, numImmatriculation)
 );
 
@@ -87,9 +87,9 @@ CREATE TABLE etape(
     dateSouhaitee DATE,
     heureReelle TIME,
     dateReelle DATE,
-    idUtil INT REFERENCES utilisateur(idUtil),
-    idTrajet INT REFERENCES trajet(idTrajet),
-    idAdresse INT REFERENCES adresse(idAdresse)
+    idUtil REFERENCES utilisateur(idUtil),
+    idTrajet REFERENCES trajet(idTrajet),
+    idAdresse REFERENCES adresse(idAdresse)
 );
 
 CREATE TABLE commente(

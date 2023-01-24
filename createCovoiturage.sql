@@ -31,6 +31,7 @@ CREATE TABLE parraine(
 
 CREATE TABLE modele(
     idModele INT PRIMARY KEY,
+    nomModele VARCHAR(50),
     nbPlaces INT,
     couleur VARCHAR(25),
     carburant CHAR(10),

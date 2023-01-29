@@ -13,12 +13,12 @@ DROP TABLE IF EXISTS commente CASCADE;
 
 CREATE TABLE utilisateur(
     idUtil SERIAL PRIMARY KEY,
+    email VARCHAR(100) UNIQUE,
+    mdp VARCHAR(50),
     nom VARCHAR(255),
     prenom VARCHAR(255),
     adresse VARCHAR(255),
-    email CHAR(50),
     dateNaissance DATE,
-    mdp CHAR(50),
     numPermis CHAR(12) UNIQUE
 );
 
@@ -35,7 +35,7 @@ CREATE TABLE modele(
     nomModele VARCHAR(50),
     nbPlaces INT,
     couleur VARCHAR(25),
-    carburant CHAR(10),
+    carburant VARCHAR(25),
     classeCritair CHAR(1)
 );
 

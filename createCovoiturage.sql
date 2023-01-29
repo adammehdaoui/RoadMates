@@ -164,7 +164,7 @@ VALUES('94170', 'Le Perreux sur Marne'),
 ('45000', 'Orléans');
 
 INSERT INTO adresse(numVoie, nomVoie, codePostal)
-VALUES(4, 'rue du pommier de l"eglise', '94170'), 
+VALUES(4, 'rue Robert Diaquin', '94170'), 
 (8, 'rue Marie', '94170'), 
 (11, 'rue Robert Diaquin', '94170'),
 (1, 'rue Abel Ferry', '75016'), 

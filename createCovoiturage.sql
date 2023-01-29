@@ -88,7 +88,7 @@ CREATE TABLE adresse(
 CREATE TABLE etape(
     idEtape SERIAL PRIMARY KEY,
     departOuArrivee BOOLEAN,
-    heureSouhaite TIME,
+    heureSouhaitee TIME,
     dateSouhaitee DATE,
     heureReelle TIME,
     dateReelle DATE,
@@ -113,7 +113,7 @@ INSERT INTO utilisateur(nom, prenom, adresse,email,dateNaissance,mdp,numPermis)
 VALUES('SOUSSI', 'Ahmed','12 Route Gournay, 93160 Noisy-Le-Grand', 'soussiahmed62@gmail.com', '2000-12-12', 'ahmed.soussi', 125125125125);
 
 INSERT INTO utilisateur(nom, prenom, adresse,email,dateNaissance,mdp,numPermis) 
-VALUES('MEHDAOUI--JORGE', 'Adam','1 rue du pommier de l"eglise, 94170 Le Perreux sur Marne', 'adamlafrite@gmail.com', '2002-07-13', 'jeanfrite', NULL);
+VALUES('MEHDAOUI--JORGE', 'Adam','1 rue du pommier, 94170 Le Perreux sur Marne', 'adam.mehdaouijorge@gmail.com', '2002-07-13', 'test123', NULL);
 
 INSERT INTO utilisateur(nom, prenom, adresse,email,dateNaissance,mdp,numPermis) 
 VALUES('FRANCIS', 'Nadime',NULL, 'francis.nadime@u-pem.fr',NULL, 'francis.nadime', 555555555666);

@@ -87,7 +87,7 @@ CREATE TABLE adresse(
 
 CREATE TABLE etape(
     idEtape SERIAL PRIMARY KEY,
-    departOuArrivee BOOLEAN,
+    departOuArrivee VARCHAR(50),
     heureSouhaitee TIME,
     dateSouhaitee DATE,
     heureReelle TIME,

@@ -116,10 +116,10 @@ INSERT INTO utilisateur(nom, prenom, adresse,email,dateNaissance,mdp,numPermis)
 VALUES('MEHDAOUI--JORGE', 'Adam','1 rue du pommier, 94170 Le Perreux sur Marne', 'adam.mehdaouijorge@gmail.com', '2002-07-13', 'test123', NULL);
 
 INSERT INTO utilisateur(nom, prenom, adresse,email,dateNaissance,mdp,numPermis) 
-VALUES('FRANCIS', 'Nadime',NULL, 'francis.nadime@u-pem.fr',NULL, 'francis.nadime', 555555555666);
+VALUES('FRANCIS', 'Nadime', NULL, 'francis.nadime@u-pem.fr', NULL, 'francis.nadime', 555555555666);
 
 INSERT INTO utilisateur(nom, prenom, adresse,email,dateNaissance,mdp,numPermis) 
-VALUES('ANSARY', 'Laura','Lidl', 'laura.ansary@gmail.com','2002-07-04', 'life.life', NULL);
+VALUES('ANSARY', 'Laura', NULL, 'laura.ansary@gmail.com','2002-07-04', 'life.life', NULL);
 
 INSERT INTO utilisateur(nom, prenom, adresse, email, dateNaissance, mdp, numPermis)
 VALUES('Castle', 'Rock', '48 rue de la Santé, 75014 Paris', 'castle.rock@life.com', '1999-12-12', 'castlerock', 456897132479);
@@ -132,11 +132,11 @@ VALUES(1, 'Toyota Panda Trueno AE86', 5, 'blanc', 'essence', '4'),
 (5, 'Tesla Model 3', 5, 'bleu', 'electric', '4');
 
 INSERT INTO voiture(numImmatriculation, idUtil, idModele) 
-VALUES('123456789', 2, 1), 
-('234567891', 1, 5), 
-('4455668899', 3, 2), 
-('4577865421', 4, 3), 
-('8956213654', 5, 4);
+VALUES('AA-001-AA', 2, 1), 
+('AA-999-AA', 1, 5), 
+('AA-001-AB', 3, 2), 
+('AA-999-AZ', 4, 3), 
+('AA-001-BA', 5, 4);
 
 INSERT INTO sponsor(raisonSociale, dureeTrajet, remuneration)
 VALUES('Nike', 60, 200.00), 
@@ -145,16 +145,16 @@ VALUES('Nike', 60, 200.00),
 ('RedBull', 30, 120.00);
 
 INSERT INTO sponsorise(idSponsor, numImmatriculation)
-VALUES(1,'123456789'), 
-(1, '234567891'), 
-(2, '4455668899'), 
-(3, '4577865421'), 
-(4, '8956213654');
+VALUES(1,'AA-001-AA'), 
+(1, 'AA-999-AA'), 
+(2, 'AA-001-AB'), 
+(3, 'AA-999-AZ'), 
+(4, 'AA-001-BA');
 
 INSERT INTO trajet(coutTrajet, finalise, idUtil, numImmatriculation)
-VALUES(50.00, FALSE, 1, '234567891'), 
-(40.00, FALSE, 3, '4455668899'), 
-(35.00, TRUE, 5, '8956213654');
+VALUES(50.00, FALSE, 1, 'AA-999-AA'), 
+(40.00, FALSE, 3, 'AA-001-AB'), 
+(35.00, TRUE, 5, 'AA-001-BA');
 
 INSERT INTO ville(codePostal, nomVille)
 VALUES('94170', 'Le Perreux sur Marne'), 

@@ -176,7 +176,7 @@ VALUES(4, 'rue Robert Diaquin', '94170'),
 (10, 'Avenue Dauphine', '45000'),
 (15, 'Rue d"Illiers', '45000');
 
-INSERT INTO etape(departOuArrivee, heureSouhaite, dateSouhaitee, heureReelle, dateReelle, idUtil, idTrajet, idAdresse)
+INSERT INTO etape(departOuArrivee, heureSouhaitee, dateSouhaitee, heureReelle, dateReelle, idUtil, idTrajet, idAdresse)
 VALUES(TRUE, '07:00:00', '2023-02-02', NULL, NULL, 1, 2, 1), 
 (FALSE, '08:00:00', '2023-02-02', NULL, NULL, 1, 2, 2),
 (TRUE, '15:00:00', '2023-01-28', NULL, NULL, 3, 1, 4), 

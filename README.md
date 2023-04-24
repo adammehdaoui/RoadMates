@@ -1,6 +1,6 @@
 # Projet covoiturage (postgreSQL)
 
-## Projet en BDD pour l'ESIPE avec le sujet du Covoiturage
+## Projet en BDD pour l'ESIEE avec le sujet du Covoiturage
 
 ### 1. Présentation générale
 

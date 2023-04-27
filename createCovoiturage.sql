@@ -122,7 +122,7 @@ INSERT INTO utilisateur(nom, prenom, adresse,email,dateNaissance,mdp,numPermis)
 VALUES('ANSARY', 'Laura', NULL, 'laura.ansary@gmail.com','2002-07-04', 'life.life', NULL);
 
 INSERT INTO utilisateur(nom, prenom, adresse, email, dateNaissance, mdp, numPermis)
-VALUES('Castle', 'Rock', '48 rue de la Santé, 75014 Paris', 'castle.rock@life.com', '1999-12-12', 'castlerock', 456897132479);
+VALUES('CASTLE', 'Rock', '48 rue de la Santé, 75014 Paris', 'castle.rock@life.com', '1999-12-12', 'castlerock', 456897132479);
 
 INSERT INTO modele(idmodele, nommodele, nbplaces, couleur, carburant, classeCritair) 
 VALUES(1, 'Toyota Panda Trueno AE86', 5, 'blanc', 'essence', '4'), 
